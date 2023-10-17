@@ -1,0 +1,558 @@
+\documentclass[12pt]{article} 
+\def\hide#1{\textcolor{white}
+\setmainfont{Arial}
+{#1}}
+\usepackage{setspace}
+
+\onehalfspacing % set line spacing to 1.5
+\usepackage[utf8]{inputenc} % 'cp1252'-Western, 'cp1251'-Cyrillic, etc.
+\usepackage[english]{babel} % 'french', 'german', 'spanish', 'danish', etc.
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{txfonts}
+\usepackage{mathdots}
+\usepackage{fancyhdr}
+
+\usepackage{url}
+\usepackage[classicReIm]{kpfonts}
+\usepackage{graphicx}
+\usepackage{float}
+\graphicspath{{images/}}
+\usepackage[document]{ragged2e}
+\usepackage{geometry}
+ \geometry{
+ a4paper,
+ total={170mm,257mm},
+ left=30mm,
+ top=25.4mm,
+ right=30mm,
+ bottom=31.75mm,
+ }
+\pagenumbering{roman}
+
+% You can include more LaTeX packages here 
+\pagestyle{fancy}
+\rhead{{Internship Report.}}
+\lfoot{PVG’s COET and GKPIM, Pune, \\Department of Computer Engineering 2022-2023}
+
+
+\begin{document}
+
+%\selectlanguage{english} % remove comment delimiter ('%') and select language if required
+
+
+\noindent 
+
+\noindent 
+
+\noindent 
+
+\noindent  
+
+\noindent 
+
+\noindent  
+
+\noindent 
+
+\noindent
+
+\noindent  
+
+\noindent 
+
+\begin{center}
+{\fontsize{21}{20}\selectfont \textbf{Pune Vidyarthi Griha's College of Engineering and Technology \& G.K. Pate (Wani) Institute of Management, Pune-411009}}
+
+% {\Large\textbf\fontsize{Pune Vidyarthi Griha's College of Engineering and Technology \& G.K. Pate (Wani) Institute of Management,Pune- 411009 }}
+
+\vspace{0.5cm}
+
+\noindent {(Affiliated to Savitribai Phule Pune University) }
+
+\noindent \includegraphics*[width=0.3\textwidth]{images/logo.jpeg} 
+
+
+
+\noindent An Internship Report On 
+\vspace{0.3cm}
+
+{\Large\textbf
+{Backend Development-Student Portal}}
+
+\vspace{0.1cm}
+
+\bigskip
+\noindent By\\
+\bigskip
+
+{\fontsize{16}{20}\selectfont{Shyam Lokhande  \hspace{0.5cm}T190074243}}
+\vspace{0.5cm}
+\bigskip
+
+{\fontsize{13}{20}\selectfont{Under the Guidance of}}\\
+\medskip
+\noindent {\fontsize{16}{20}\selectfont\textbf{Prof. A. M. Bhadgale}}\\
+\bigskip
+\bigskip
+\vspace{0.5cm}
+\noindent {\Large\textbf{ Department Of Computer Engineering }}\\
+
+\noindent \textbf{Academic Year: - 2022-2023 }
+\end{center}
+\pagebreak
+
+\section*{Overview of the Organisation :}
+\vspace{0.5cm}
+\begin{itemize}
+  \item[\textbf{a.}] \textbf{Introduction of the organization:}\\
+  \bigskip
+
+\hspace{1cm}While working for development of Student Portal under Association of Computer Engineering Students at PVG’s COET \& GKP (W) IOM, Pune-9  as an intern my role was that of  backend developer. I was pretty familiar with Django. Me and my team were required to build a full-stack student portal website.\\
+\medskip
+\medskip
+About ACES:\\
+\medskip
+
+\hspace{1cm}Association of Computer Engineering Students (ACES) was reformed in the year 2017-18 by the final year students of Computer branch. Previously, it was a joint venture of Computer Engineering and Information Technology Students, known as ASCI (Association of Students of Computer and IT) formed in 2004-05. The sole purpose in forming this association was to bring students together and to provide them the platform to nurture their talent. The year 2017-18 was proved to be a breakthrough for ACES as the committee was able to form a quite good platform for the years to come.\\
+\smallskip
+\hspace{1cm}ACES is the platform where students as well teachers can interact with each other at a very different level. This platform was formed to promote innovation, talent and skills in a particular student. ACES was formed on the grounds of sharing, hard work, loyalty and respect towards knowledge as well as teachers. With the heart of ACES being knowledge conducting multiple events to spread the knowledge is the motto of the ACES. Thus  ACES is a platform formed by the students for the students.\\
+\pagebreak
+ABOUT PVG’s COET and GKP (W) IOM:\\
+\smallskip
+\hspace{1cm}The parent institute Pune Vidyarthi Griha, formerly known, as Pune Anath Vidyarthi Griha is a well-known charitable institution of Maharashtra, established in 1909, by a group of dedicated and visionary educationists. Last year it has celebrated its centenary too.\\
+\smallskip
+\hspace{1cm}The primary mission of the Institute is to provide progressive and value added education facilities for the deserving, poor students of the society. Today, the institution has grown into a big banyan tree with its branches at Pune, Mumbai, and Nashik under its umbrella.\\
+\smallskip
+\hspace{1cm}The Institute conducts a wide spectrum of education programs from Pre-primary to Higher education, in professional fields like Engineering Technology, Management, Computer Science, Commerce and Science College etc.\\
+\hspace{1cm}The Institute also runs the Research Institute of Communication Technology to nurture thirst of research and innovative minds.\\
+\smallskip
+\hspace{1cm}Pune Vidyarthi Griha governs various institutions at Pune. Through these institutions, Pune Vidyarthi Griha provides various facilities from Junior KG to University level professional courses for the deserving students.\\
+\smallskip
+\hspace{1cm}Pune Vidyarthi Griha has been the only institute in India, which has striven hard to professional education in printing field since 1926 and has taken lead in establishing degree and diploma in Printing Engineering and Communication Technology, approved by the All India Council for Technical Education.\\
+\smallskip
+\hspace{1cm}The institute also runs Hostel for destitute boys, Gents \& Ladies Hostels at Pune and Old age Home (Shatayu Bhavan) at Pune. PVG has modern Printing Press and Publications division. It has published mainly Technical books, which are standard \& very popular.\\
+    \item[\textbf{b.}] \textbf{Internship supervisor name}\\
+    \begin{itemize}
+         \item Prof. A. M. Bhadgale Sir
+         \item Prof. A. G. Dongre Sir
+    \end{itemize}
+       
+
+\smallskip
+
+  \item[\textbf{b.}] \textbf{Website URL:}\\
+  \smallskip
+
+
+\url{https://www.pvgcoet.ac.in/pvgcoetgkpim/}
+\end{itemize}
+\pagebreak
+\begin{center}
+\section*{LETTER OF UNDERTAKING}
+\end{center}
+\bigskip
+\emph{I, Shyam Lokhande, third-year student of Computer Engineering Department, PVG’s COET \& GKP
+(W) IOM, Pune-9 hereby confirm that the internship report I have provided is solely my own
+effort. I did not copy my report partially or completely from any other student or from any other
+source either against payment or free and I did not provide any plagiarized material in any
+section of my report. I further confirm that the document (internship completion certificate)
+that I have provided is genuine (i.e., not forged/fake) and has been issued by the authorized
+person in the organization. If I am found guilty of misstating, misleading or concealing the facts
+about my activities (either academic or non-academic but relevant to this course) at any stage,
+the university is authorized to take disciplinary action against me according to the university
+policies and regulations. I assure you that I will follow the instructions regarding the presentation. and
+will appear on the scheduled date for the presentation which will be intimated to me by the
+department. In case of any negligence, I shall be held responsible.}\\
+\vspace{1.5cm}
+\emph{Name ..............................................\hspace{1cm}Signature ..............................................}\\
+\bigskip
+\emph{Date ..............................................}
+\pagebreak
+\begin{center}
+{\fontsize{21}{20}\selectfont \textbf{Pune Vidyarthi Griha's College of Engineering and Technology \& G.K. Pate (Wani) Institute of Management, Pune-411009}}
+
+
+\vspace{0.5cm}
+
+\noindent {(Affiliated to Savitribai Phule Pune University) }
+
+\noindent \includegraphics*[width=0.3\textwidth]{images/logo.jpeg}\\
+\medskip
+{\Large{Certificate}}\\
+\end{center}
+\medskip
+This is to certify that the Internship report entitled “Student Portal”, submitted by, 
+Shyam Lokhande, T190074243 is a record of bonafide work carried out by him/her, in the partial fulfillment of the Presentation \& Term-work of Third year in Computer Engineering of Savitribai Phule Pune University at Pune Vidyarthi Griha’s College of Engineering and Technology \& G.K. Pate (Wani) Institute of Management, Pune under Savitribai Phule Pune University, Pune. This work is done during, Academic Year 2022-23.
+\\
+\bigskip
+\textbf{Date: - 16th May, 2023}\\
+\medskip
+\textbf{Place: - Pune}\\
+\vspace{1.5cm}
+\textbf{Prof. A. M. Bhadgale\hspace{5cm}Prof. A. G. Dongre}\\
+\textbf{(Guide)\hspace{6.65cm}(External)}
+\pagebreak
+\begin{center}
+    \section*{Acknowledgement}
+\end{center}
+\bigskip
+ \emph{I would like to express my gratitude towards Prof. A. M. Bhadgale Sir, Assistant Professor in Computer Engineering Department at PVG’s COET \& GKP (W) IOM, Pune-9, and Prof. A. G. Dongre Sir, Assistant Professor in Computer Engineering Department at PVG’s COET \& GKP (W) IOM, Pune-9, who have been very concerned and have aided in all the help essential in the implementation of this work. }\\
+ 
+ \medskip
+ \emph{It was an amazing experience working in the Web development domain. It also helped me improve my full stack skills and understand its real-time behavior. }\\
+ \medskip
+ \emph{I am also thankful to my fellow teammates who worked with me and helped me learn new things during this project. I am thankful to my internship guide, Prof. A. M. Bhadgale Sir for guiding us.}\\
+ \smallskip
+ 
+\vspace{1.5cm}
+{\hfill\emph{Shyam Lokhande}}\\
+
+{\hfill\emph{20140036}}\\
+\medskip
+{\hfill\emph{\textbf{(T.E. Computer Engineering)}}}\\
+\pagebreak
+\begin{center}
+	\section*{Abstract}
+\end{center}
+\medskip
+\emph{\hspace{1cm}This report outlines my experience as an intern in the back-end development team for a student portal website. The primary objective of the internship was to contribute to the enhancement of user experience and functionality of the student portal. The report begins by providing an overview of the student portal's existing architecture, technologies, and features. It then delves into the specific projects and tasks I undertook during the internship period. These include optimizing the database structure for improved performance, developing APIs to facilitate seamless data exchange between the back-end and front-end systems, and implementing authentication and authorization mechanisms to ensure secure access to sensitive information. Furthermore, the report discusses the methodologies and tools employed throughout the internship, such as Agile development practices and version control systems. It highlights the challenges encountered during the development process, including scalability considerations, data integrity concerns, and integrating third-party services. Finally, the report concludes with a reflection on the internship experience, highlighting the key lessons learned and the potential for future enhancements to the student portal. It emphasizes the significance of back-end development in optimizing user interactions and lays the foundation for continued innovation and growth. Overall, this internship provided a valuable opportunity to apply theoretical knowledge in a real-world setting, gain hands-on experience in back-end development, and contribute to the advancement of a student portal website. The insights gained from this internship will serve as a valuable foundation for my future endeavors in the field of web development.}
+\pagebreak
+\newpage
+\begin{center}
+    \section*{Index}
+\end{center}
+\vspace{1.5cm}
+\begin{center}
+    
+\begin{tabular}{|p{0.4in}|p{0.4in}|p{2.5in}|p{1.2in}|} \hline 
+\multicolumn{2}{|p{1in}|}{Sr.No } & Chapter Number  & \textbf{Page no. } \\ \hline 
+\multicolumn{2}{|p{1in}|}{1. } & Introduction  & 1  \\ \hline 
+\multicolumn{2}{|p{1in}|}{2. } & Title  &   \\ \hline
+  
+\multicolumn{2}{|p{1in}|}{3. } & Problem Statement  &   \\ \hline 
+\multicolumn{2}{|p{1in}|}{4. } & Objectives  &   \\ \hline 
+\multicolumn{2}{|p{1in}|}{5. } & Motivation and Rationale of The Study  &   \\ \hline  
+  
+\multicolumn{2}{|p{1in}|}{6. } & Methodological Details  &   \\ \hline    
+\multicolumn{2}{|p{1in}|}{7. } & Results/Analysis and Conclusion  &   \\ \hline 
+
+\multicolumn{2}{|p{1in}|}{8. } & Logbook  &   \\ \hline 
+
+\multicolumn{2}{|p{1in}|}{9. } & Suggestions/ Recommendation for improvement to industry  &   \\ \hline 
+\multicolumn{2}{|p{1in}|}{10. } & UI Images   &   \\ \hline 
+\multicolumn{2}{|p{1in}|}{11. } & Other Internship   &   \\ \hline 
+
+   
+\end{tabular}
+\end{center}
+\pagebreak
+\newpage
+\begin{center}
+    \section*{List of Figures}
+\end{center}
+\vspace{1.5cm}
+\begin{center}
+    
+\begin{tabular}{|p{0.4in}|p{0.4in}|p{2.5in}|p{1.2in}|} \hline 
+\multicolumn{2}{|p{1in}|}{Fig.No } & Name  & \textbf{Page no. } \\ \hline 
+\multicolumn{2}{|p{1in}|}{1. } & Agile Model  & 1  \\ \hline 
+\multicolumn{2}{|p{1in}|}{2. } & Daily Scrum Architecture   &   \\ \hline
+  
+\multicolumn{2}{|p{1in}|}{3. } & Django Architecture   &   \\ \hline 
+   
+\end{tabular}
+\end{center}
+\bigskip
+
+
+\begin{center}
+    \section*{List of Tables}
+\end{center}
+\vspace{1.5cm}
+\begin{center}
+    
+\begin{tabular}{|p{0.4in}|p{0.4in}|p{2.5in}|p{1.2in}|} \hline 
+\multicolumn{2}{|p{1in}|}{Table No } & Name  & \textbf{Page no. } \\ \hline 
+\multicolumn{2}{|p{1in}|}{1. } & FrontEnd Log Book & 1  \\ \hline 
+   
+\end{tabular}
+\end{center}
+
+\pagebreak
+\newpage
+
+\pagenumbering{arabic}
+\begin{center}\section*{\Large Chapter 1. Introduction}\end{center}
+\vspace{1.5cm}
+\hspace{1cm}Business—and life in general—has become increasingly dependent on the internet, web apps and mobile apps. As a result, companies have found that the best way to compete on the web is to prioritize building an attractive and efficient user interface (UI) that optimizes the user experience (UX).\\
+\medskip
+\hspace{1cm}The user interface (UI) is the point at which human users interact with a computer, website or application. The goal of effective UI is to make the user's experience easy and intuitive, requiring minimum effort on the user's part to receive the maximum desired outcome.\\
+\medskip
+\hspace{1cm}Back-end Development refers to server-side development. It focuses on databases, scripting, and website architecture. It contains behind-the-scenes activities that occur when performing any action on a website. It can be an account login or making a purchase from an online store. Code written by back-end developers helps browsers to communicate with database information.\\
+\medskip
+\hspace{1cm}A database is an organized collection of structured information, or data, typically stored electronically in a computer system. A database is usually controlled by a database management system (DBMS). Together, the data and the DBMS, along with the applications that are associated with them, are referred to as a database system, often shortened to just a database.\\
+\medskip
+\hspace{1cm}Data within the most common types of databases in operation today is typically modeled in rows and columns in a series of tables to make processing and data querying efficient. The data can then be easily accessed, managed, modified, updated, controlled, and organized. Most databases use structured query language (SQL) for writing and querying data.\\
+\medskip
+
+\pagebreak
+\newpage
+\begin{center}\section*{\Large \emph{Chapter 2. Project Title}}\end{center}
+\begin{center}\subsection*{\large \emph{Student Portal }}\end{center}
+\bigskip
+\begin{center}\section*{\Large Chapter 3. Problem Statement}\end{center}
+\vspace{1cm}
+\hspace{1cm}\hspace{0.25cm}Work on the following things:\\
+\vspace{1cm}
+\begin{itemize}
+         \item Design and Develop a student internship Portal to store the required details of a student using frontend and backend technologies 
+         \item Create user roles. 
+\end{itemize}
+\pagebreak
+\newpage
+\begin{center}\section*{\Large Chapter 4. Objectives}\end{center}
+\vspace{1.5cm}
+
+
+
+\begin{itemize}
+         \item Building the UI and UX  
+         \item Building a strong database in order not to get crashed  
+         \item Adding the CRUD operations 
+         \item Adding registration, login, reset password features
+         \item Redirecting to appropriate pages without fail 
+\end{itemize}
+\pagebreak
+\newpage
+\begin{center}\section*{\Large {Chapter 5. Motivation and Rationale of The
+Study}}\end{center}
+\bigskip
+\begin{center}\subsection*{Chapter 5.1 Motivation to Study Domain}\end{center}
+\medskip
+\hspace{1cm}The motivation behind conducting this study on the internship in back-end development for a student portal website stems from several key factors.\\
+\medskip
+\begin{enumerate}
+\item \textbf{Importance of Student Portal Websites: }Student portal websites have become essential platforms for educational institutions to streamline communication, enhance student engagement, and provide convenient access to academic resources. As such, improving the user experience and functionality of these portals is crucial to meet the evolving needs of students and educators.
+\item \textbf{Practical Application of Academic Knowledge: }This study provides an opportunity to apply theoretical knowledge acquired during academic studies to real-world scenarios. By participating in an internship focused on back-end development, I aimed to bridge the gap between classroom learning and practical implementation, thereby gaining valuable hands-on experience in a professional setting.
+\item \textbf{Addressing Technical Challenges: } Back-end development poses unique challenges, including performance optimization, data management, and ensuring secure data exchange. Through this study, I sought to address these challenges and explore effective solutions to enhance the back-end infrastructure of the student portal website, ultimately contributing to a seamless and efficient user experience.
+\item \textbf{Professional Growth and Career Development: }Undertaking an internship in back-end development allows for personal and professional growth in the field of web development. By actively engaging in projects related to database optimization, API development, and security implementation, I aimed to strengthen my skills and broaden my understanding of industry-standard practices, which would prove beneficial for future career opportunities.
+\end{enumerate}
+\medskip
+In summary, the motivation and rationale of this study lie in the importance of student portal websites, the practical application of academic knowledge, the need to address technical challenges, the pursuit of professional growth and career development, and the desire to contribute to the continuous improvement of student portals. By undertaking this study, valuable insights can be gained to inform future advancements in back-end development for student portal websites.
+\vspace{1.5cm}
+\begin{center}\subsection*{Chapter 5.2 Motivation to Implement the Projects}\end{center}
+\medskip
+\hspace{1cm}
+Addressing User Needs: The primary motivation was to address the needs and requirements of students and educational institutions. Student portal websites play a crucial role in facilitating effective communication, providing access to resources, and promoting collaboration among students.
+\medskip\hspace{1cm}\\
+Enhancing Efficiency and Productivity: A well-designed back-end infrastructure is vital for optimizing the efficiency and productivity of a student portal website. By implementing various back-end development projects, such as database optimization, API development\\\smallskip \hspace{1cm}Promoting Scalability and Future Growth: Student portal websites often experience growth in user base and increasing demands over time. The motivation to implement the project was to ensure the scalability and adaptability of the back-end system to accommodate future growth. By developing a robust and scalable architecture, the aim was to lay a strong foundation that could support the portal's expansion and handle increasing user loads seamlessly.\\
+
+\pagebreak\newpage
+\begin{center}\section*{\Large {Chapter 6. Methodological Details}}\end{center}
+\bigskip
+\subsection{\large{Agile Model}}
+\begin{figure}[ht]
+\centering
+\includegraphics[width=0.5\textwidth]{images/img1.jpg}
+\caption{Agile Model }
+\label{fig:example}
+\end{figure}
+\hspace{1cm}Agile is a term used to describe approaches to software development emphasizing incremental delivery, team collaboration, continual planning, and continual learning, instead of trying to deliver it all at once near the end. \\
+
+\hspace{1cm}Agile focuses on keeping the process lean and creating minimum viable products (MVPs) that go through a number of iterations before anything is final. Feedback is gathered and implemented continually and in all, it is a much more dynamic process where everyone is working together towards one goal.Ref fig.
+\\
+\subsection{\large{Scrum}}
+% \textbf{The Kernel trick:}\\
+\begin{figure}[ht]
+\centering
+\includegraphics[width=0.8\textwidth]{images/img2.jpg}
+\caption{Daily Scrum Architecture }
+\label{fig:example}
+\end{figure}
+\hspace{1cm}Scrum is a framework within which people can address complex adaptive problems, while productively and creatively delivering products of the highest possible value. It is used for managing software projects and product or application development. Its focus is on an adaptive product development strategy where a cross-functional team works as a unit to reach a common goal within 2-4 weeks (Sprint). It consists of a collection of values, artifacts, roles, ceremonies, rules and best practices. \\ \smallskip
+
+\subsection{\large{Django}}
+% \textbf{The Kernel trick:}\\
+\begin{figure}[ht]
+\centering
+\includegraphics[width=0.8\textwidth]{images/img3.jpg}
+\label{fig:example}
+\end{figure}
+\hspace{1cm}Django is a high-level Python web framework that encourages rapid development and clean, pragmatic design.Django takes care of much of the hassle of web development, so you can focus on writing your app without needing to reinvent the wheel. It is free and open source, has a thriving and active community, great documentation, and many options for free and paid-for support.\\ \smallskip
+\textbf{Features of Django: }\smallskip
+
+\hspace{1cm}\textbf{Versatile: }Django can be (and has been) used to build almost any type of website — from content management systems and wikis, through to social networks and news sites. It can work with any client-side framework, and can deliver content in almost any format (including HTML, RSS feeds, JSON, XML, etc). \\ \smallskip
+
+\hspace{1cm}\textbf{Secure: }Django helps developers avoid many common security mistakes by providing a framework that has been engineered to "do the right things" to protect the website automatically. 
+ 
+A password hash is a fixed-length value created by sending the password through a cryptographic hash function. Django can check if an entered password is correct by running it through the hash function and comparing the output to the stored hash value. However due to the "one-way" nature of the function, even if a stored hash value is compromised it is hard for an attacker to work out the original password. 
+\\ \smallskip
+
+\hspace{1cm}\textbf{Maintainable:} Django code is written using design principles and patterns that encourage the creation of maintainable and reusable code. In particular, it makes use of the Don't Repeat Yourself (DRY) principle so there is no unnecessary duplication, reducing the amount of code. \\ \smallskip
+
+\hspace{1cm}\textbf{Portable:} Django is written in Python, which runs on many platforms. That means that you are not tied to any particular server platform, and can run your applications on many flavors of Linux, Windows, and macOS. 
+ 
+\\
+\smallskip
+
+\begin{figure}[ht]
+\centering
+\includegraphics[width=0.8\textwidth]{images/img4.jpg}
+\caption{Django Architecture }
+\label{fig:example}
+\end{figure}
+
+
+\subsection{\large{React}}
+% \textbf{The Kernel trick:}\\
+\begin{figure}[ht]
+\centering
+\includegraphics[width=0.8\textwidth]{images/img5.png}
+\label{fig:example}
+\end{figure}
+\hspace{1cm}ReactJS is a declarative, efficient, and flexible JavaScript library for building reusable UI components. It is an open-source, component-based front end library which is responsible only for the view layer of the application. \\ \smallskip
+\textbf{Features of React: }\smallskip
+
+\hspace{1cm}\textbf{Declarative:} React makes it painless to create interactive UIs. Design simple views for each state in your application, and React will efficiently update and render just the right components when your data changes. 
+Declarative views make your code more predictable and easier to debug. 
+\\ \smallskip
+
+\hspace{1cm}\textbf{Component-Based: }Build encapsulated components that manage their own state, then compose them to make complex UIs. 
+Since component logic is written in JavaScript instead of templates, you can easily pass rich data through your app and keep state out of the DOM. 
+
+\\ \smallskip
+
+\hspace{1cm}\textbf{Learn Once, Write Anywhere } You can develop new features in React without rewriting existing code. React can also render on the server using Node and power mobile apps using React Native.  \\ \smallskip
+
+
+\begin{figure}[ht]
+\centering
+\includegraphics[width=0.8\textwidth]{images/img6.jpg}
+\caption{Django Architecture }
+\label{fig:example}
+\end{figure}
+
+
+\subsection{\large{Gitlab}}
+% \textbf{The Kernel trick:}\\
+\begin{figure}[ht]
+\centering
+\includegraphics[width=0.8\textwidth]{images/img7.png}
+\label{fig:example}
+\end{figure}
+\hspace{1cm}GitLab is a single application for the entire software development lifecycle. From project planning and source code management to CI/CD, monitoring, and security.  \\ \smallskip
+\hspace{1cm}Gitlab provides the facility to create issues and keep a track of them. Thus, issues were created with a particular deadline. After completion of targets made the portal was deployed using docker and tested. Feedback was taken from the first-hand users from principal institutes. Feedback report was taken into consideration and respective changes were made. \\
+\smallskip
+
+
+\pagebreak \newpage
+\begin{center}\section*{\Large {Chapter 7. Results/Analysis and Conclusion}}\end{center}
+
+\begin{itemize}
+         \item Portal is deployed on localhost and is working  
+         \item The Relational Schema of the database is structured. 
+         \item During the internship, the functionalities provided are working properly on the deployed portal. 
+         \item The UI is created. 
+         \item Redirecting to appropriate pages without fail
+         \item Code is reliable as react and Django are used. 
+\end{itemize}
+
+
+\medskip
+\vspace{1cm}
+\hspace{1cm}The internship experience in back-end development for a student portal website has been highly rewarding, providing valuable insights and practical experience in the field of web development. The objectives of enhancing user experience and functionality have been successfully accomplished through various projects and tasks undertaken during the internship period.
+
+Through the internship, I gained hands-on experience in optimizing the database structure, developing APIs, and implementing secure authentication and authorization mechanisms. These improvements have significantly contributed to improving the overall performance, scalability, and security of the student portal website.\\
+The analysis of key performance metrics and user feedback indicated positive outcomes resulting from the implemented enhancements. Faster page load times, smoother navigation, and increased user satisfaction were observed, demonstrating the effectiveness of the back-end development projects in enhancing the user experience.\\ \smallskip
+
+\hspace{1cm}Additionally, the internship experience allowed for the practical application of academic knowledge and bridged the gap between theory and practice. It provided an opportunity to work in a professional setting, collaborating with a team and following industry-standard development practices such as Agile methodologies and version control systems.\\ \smallskip
+
+\hspace{1cm}The challenges encountered during the development process, including scalability considerations and integrating third-party services, served as valuable learning experiences. Overcoming these challenges required problem-solving skills, adaptability, and collaboration, further enhancing professional growth and competence in back-end development.\\
+
+\hspace{1cm}Overall, the internship experience in back-end development for a student portal website has been a significant milestone in my journey as a web developer. It has not only solidified my technical skills but also provided insights into the importance of user-centric design, efficient data management, and robust security measures in developing successful web applications.
+\\
+\hspace{1cm}Looking forward, the knowledge and experience gained from this internship will serve as a strong foundation for future endeavors in the field of web development. The lessons learned, challenges overcome, and successful outcomes achieved during the internship will guide and inspire continued innovation and improvement in the development of student portal websites.
+\\
+\hspace{1cm}In conclusion, this internship has been a valuable experience that has not only contributed to the enhancement of the student portal website but also fostered personal and professional growth. The internship has demonstrated the significance of back-end development in optimizing user interactions, improving functionality, and laying the groundwork for continued innovation in the realm of student portal websites.
+
+\pagebreak \newpage
+\begin{center}\section*{\Large {Chapter 8.Log Book}}\end{center}
+
+
+\begin{center}
+    \section*{Log Book}
+\end{center}
+\vspace{1.5cm}
+\begin{center}
+    
+\begin{tabular}{|p{0.4in}|p{0.4in}|p{2.5in}|p{1.2in}|} \hline 
+\multicolumn{2}{|p{1in}|} {Month/Year}  & \textbf{Description} \\ \hline 
+\multicolumn{2}{|p{1in}|}{March 2023 } & Got familiar with the code and objectives 
+Learned the required frameworks and revised some concepts. 
+  \\ \hline 
+\multicolumn{2}{|p{1in}|}{April 2023 } &   \\ \hline
+  
+\multicolumn{2}{|p{1in}|}{May 2023 } &      \\ \hline 
+
+   
+\end{tabular}
+\end{center}
+
+
+
+\pagebreak\newpage
+
+\begin{center}\section*{\Large {Chapter 9.Suggestions/ Recommendations for improvement to the industry}}\end{center}
+
+\vspace{0.6cm}
+\begin{itemize}
+         \item Considering the current portal, the homepage needs a bit of attention 
+         \item Animation can be added using css to make more attractive.  
+         \item Needs to be Authenticated 
+         \item UI can be improved 
+    
+\end{itemize}
+\bigskip
+\begin{center}\section*{\Large Attendance Record}\end{center}
+\vspace{0.4cm}
+\begin{itemize}
+    \item Virtual Course-Work Certification / Internship
+\end{itemize}
+
+\pagebreak\newpage
+
+\begin{center}\section*{\Large {Chapter 10. UI Images}}\end{center}
+
+\pagebreak\newpage
+
+
+\begin{center}\section*{\Large References}\end{center}
+\vspace{0.6cm}
+\begin{itemize}
+    \item \textbf{Books:}\\
+    \begin{itemize}
+        \item 
+\emph{Hands-On Machine Learning with Scikit-Learn, Keras, and TensorFlow: Concepts, Tools, and Techniques to Build Intelligent Systems 2nd Edition by Aurélien Géron }
+\item \emph{Mathematics for Machine Learning by Marc Peter Deisenroth}
+    \end{itemize}
+    \item \textbf{Websites:}\\
+    \begin{itemize}
+        \item \emph{http://jmcauley.ucsd.edu/data/amazon/}
+        \item \emph{https://en.wikipedia.org/wiki/Support\_vector\_machine}
+        \item \emph{https://scikit-learn.org/stable/user\_guide.html}
+        \item \emph{https://docs.opencv.org/4.x/}
+        \item \emph{https://pandas.pydata.org/docs/user\_guide/index.html\#user-guide}
+        \item \emph{https://nnfs.io/}
+        \item \emph{http://d2l.ai/}
+        
+    \end{itemize}
+    
+\end{itemize}
+
+\pagebreak\newpage
+
+\begin{center}\section*{\Large {Chapter 11.Other Internship}}\end{center}
+\pagebreak\newpage
+
+\end{document}

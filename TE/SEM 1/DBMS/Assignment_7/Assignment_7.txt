@@ -1,0 +1,28 @@
+SET SERVEROUT ON
+SET VERIFY OFF
+
+CREATE OR REPLACE PROCEDURE cursor_imp AS
+	c_r NUMBER;
+	c_n VARCHAR2(25);
+	c_d VARCHAR2(5);
+	cursor c1 (roll NUMBER , n VARCHAR2 , d VARCHAR2)
+	IS SELECT roll_no,name , div FROM o_rollcall GROUP BY roll_no,name,div HAVING (COUNT(roll_no)>1) ;
+	temp  c1%rowtype;
+BEGIN
+	INSERT INTO n_rollcall SELECT * FROM o_rollcall;
+	OPEN c1(c_r,c_n,c_d);
+	LOOP
+		FETCH c1 INTO temp;
+		EXIT WHEN c1%NOTFOUND;
+		DELETE FROM n_rollcall WHERE n_rollcall.roll_no = temp.roll_no AND name = temp.name AND div = temp.div;
+		INSERT INTO n_rollcall VALUES (temp.roll_no,temp.name,temp.div);
+		dbms_output.put_line(temp.roll_no||temp.name||temp.div);
+	END LOOP;
+END;
+/
+
+BEGIN
+	cursor_imp;
+END;
+
+/
